@@ -1,12 +1,11 @@
 package com.miya;
 
 import com.alibaba.fastjson.JSONObject;
-import com.ezy.message.model.callback.approval.*;
+import com.miya.model.callback.approval.*;
 import com.miya.model.callback.contact.Contact;
 import com.miya.model.callback.contact.ExtAttr;
 import com.miya.model.callback.contact.Item;
 import com.miya.model.callback.contact.ItemText;
-import com.miya.model.callback.approval.*;
 import com.thoughtworks.xstream.XStream;
 import lombok.extern.slf4j.Slf4j;
 import org.testng.annotations.Test;

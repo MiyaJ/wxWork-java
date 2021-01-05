@@ -15,27 +15,28 @@ import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+
 /**
- * @Author: Kevin Liu
- * @CreateDate: 2020/6/28 15:16
- * @Desc 启动类
- * @Version: 1.0
+ * @author Caixiaowei
+ * @ClassName ApprovalApplication
+ * @Description
+ * @createTime 2020/9/7 15:31$
  */
 @SpringBootApplication
 @EnableDiscoveryClient
-@MapperScan("com.ezy.approval.mapper")
+@MapperScan("com.miya.mapper")
 @EnableScheduling
 @EnableTransactionManagement
 @EnableCaching
 @EnableAsync
 @Slf4j
-public class SiteApplication implements CommandLineRunner {
+public class ApprovalApplication implements CommandLineRunner {
 
     @Autowired
     private CompensateHandler compensateHandler;
 
     public static void main(String[] args) {
-        SpringApplication.run(SiteApplication.class, args);
+        SpringApplication.run(ApprovalApplication.class, args);
     }
 
     @Bean

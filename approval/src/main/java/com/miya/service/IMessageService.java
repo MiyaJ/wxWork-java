@@ -1,14 +1,13 @@
 package com.miya.service;
 
 import com.alibaba.fastjson.JSONObject;
-import com.ezy.approval.model.message.*;
+import com.miya.model.CommonResult;
 import com.miya.model.message.ChatInfoVO;
 import com.miya.model.message.GroupChatCreateDTO;
 import com.miya.model.message.MsgVO;
 import com.miya.model.message.personal.ImageMsg;
 import com.miya.model.message.personal.NewsMsg;
 import com.miya.model.message.personal.TextMsg;
-import com.miya.model.CommonResult;
 
 /**
  * 消息推送接口

@@ -5,7 +5,6 @@ import com.alibaba.fastjson.JSONObject;
 import com.miya.config.RabbitConfig;
 import com.miya.entity.RabbitMessage;
 import com.miya.model.callback.QwEvent;
-import com.ezy.message.model.callback.approval.*;
 import com.miya.model.callback.approval.*;
 import com.miya.model.callback.contact.Contact;
 import com.miya.model.callback.contact.ExtAttr;
@@ -194,6 +193,26 @@ public class CallBackController {
             throw new RuntimeException("解析微信校验数据异常");
         }
 
+    }
+
+    /**
+     * 构建企业微信消息的加解密
+     *
+     * @param appToken 应用token
+     * @return encodingAesKey 应用加解密key
+     * @author Caixiaowei
+     * @updateTime 2021/1/5 15:03
+     */
+    private WXBizMsgCrypt wxcptApproval(String appToken, String encodingAesKey){
+        WXBizMsgCrypt wxcpt = null;
+        try {
+            wxcpt = new WXBizMsgCrypt(appToken, encodingAesKey, this.corpid);
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.error("解析微信校验数据异常: {}", e.getMessage());
+            throw new RuntimeException("企业微信校验异常");
+        }
+        return wxcpt;
     }
 
     private WXBizMsgCrypt wxcptApproval(){

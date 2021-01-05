@@ -1,13 +1,12 @@
 package com.miya;
 
 import com.alibaba.fastjson.JSONObject;
-import com.ezy.approval.model.callback.approval.*;
+import com.miya.model.callback.approval.*;
 import com.miya.model.callback.approval.third.AppravalCallbackMessage;
 import com.miya.model.callback.approval.third.ApprovalNode;
 import com.miya.model.callback.approval.third.ApprovalNodeItem;
 import com.miya.model.callback.approval.third.ApprovalNotifyNode;
 import com.miya.utils.crypto.WxCryptUtil;
-import com.miya.model.callback.approval.*;
 import com.thoughtworks.xstream.XStream;
 import lombok.extern.slf4j.Slf4j;
 import org.testng.annotations.Test;
