@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.ezy.approval.mapper.ApprovalApplyMapper">
+<mapper namespace="com.miya.mapper.ApprovalApplyMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.ezy.approval.entity.ApprovalApply">
+    <resultMap id="BaseResultMap" type="com.miya.entity.ApprovalApply">
         <id column="id" property="id" />
         <result column="sp_no" property="spNo" />
         <result column="system_code" property="systemCode" />
@@ -24,7 +24,7 @@
         <result column="update_time" property="updateTime" />
     </resultMap>
 
-    <select id="list" resultType="com.ezy.approval.model.apply.ApprovalListVO">
+    <select id="list" resultType="com.miya.model.apply.ApprovalListVO">
         SELECT
             sp_no AS spNo,
             sp_name AS spName,
