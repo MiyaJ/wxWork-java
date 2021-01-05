@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ezy.approval.mapper.ApprovalSpRecordDetailMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.ezy.approval.entity.ApprovalSpRecordDetail">
+        <id column="id" property="id" />
+        <result column="sp_record_id" property="spRecordId" />
+        <result column="approver_user_id" property="approverUserId" />
+        <result column="approver_emp_id" property="approverEmpId" />
+        <result column="speech" property="speech" />
+        <result column="sp_status" property="spStatus" />
+        <result column="sp_time" property="spTime" />
+    </resultMap>
+
+</mapper>

@@ -1,0 +1,70 @@
+spring:
+  application:
+    name: approval-site
+  profiles:
+    active: dev
+#management: #开启SpringBoot Admin的监控
+#  endpoints:
+#    web:
+#      exposure:
+#        include: '*'
+#  endpoint:
+#    health:
+#      show-details: always
+
+#server:
+#  port: 8880
+#
+#spring:
+#  redis:
+#    database: 0
+#    host: 127.0.0.1
+#    port: 6379
+#    lettuce:
+#      pool:
+#        min-idle: 8
+#        max-idle: 500
+#        max-active: 2000
+#        max-wait: 10000
+#    timeout: 5000
+#  datasource:
+#    type: com.alibaba.druid.pool.DruidDataSource
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://172.16.0.10:3306/wxwork?characterEncoding=utf8&characterSetResults=utf8&autoReconnect=true&failOverReadOnly=false&serverTimezone=Asia/Shanghai
+#    username: root
+#    password: qwedsa!@#
+#    # 初始化大小，最小，最大
+#    initial-size: 5
+#    min-idle: 5
+#    max-active: 20
+#    # 配置获取连接等待超时的时间
+#    max-wait: 60000
+#    # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位毫秒
+#    time-between-eviction-runs-millis: 60000
+#    # 配置一个连接在池中最小生存时间
+#    min-evictable-idle-time-millis: 300000
+#    validation-query: SELECT 1 FROM sys_user
+#    test-while-idle: true
+#    test-on-borrow: false
+#    test-on-return: false
+#    # 打开 PSCache，并且指定每个连接上 PSCache 的大小
+#    pool-prepared-statements: true
+#    max-pool-prepared-statement-per-connection-size: 20
+#    # 配置监控统计拦截的 Filter，去掉后监控界面 SQL 无法统计，wall 用于防火墙
+#    filters: stat,wall,log4j
+#    # 通过 connection-properties 属性打开 mergeSql 功能；慢 SQL 记录
+#    connection-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+#
+#mybatis-plus:
+#  type-aliases-package: com.ezhiyang.approval.entity
+#  mapper-locations: classpath:mapper/**/.xml
+#  configuration:
+#    jdbc-type-for-null: null
+#  global-config:
+#    banner: false
+#
+#qywx:
+#  corpid: wwc5057e76805fa8ac
+#  approval-corpsecret: LSyEMX6zvBMbHavKEdYdkBWg-qNQec6wE_2zkxu_knM
+#  msg-corpsecret: lc8raLQABwPGlHsbGcDxyPrZcVz4spcXUyxCuMFNTZY
+

@@ -1,0 +1,65 @@
+server:
+  port: 8881
+spring:
+  application:
+    name: ezy-reception
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+    #确认消息已发送到交换机(Exchange)
+    publisher-confirms: true
+    #确认消息已发送到队列(Queue)
+    publisher-returns: true
+
+  redis:
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+    lettuce:
+      pool:
+        min-idle: 8
+        max-idle: 500
+        max-active: 2000
+        max-wait: 10000
+    timeout: 5000
+  datasource:
+    dynamic:
+      hikari:
+        connection-timeout: 30000
+        max-lifetime: 1800000
+        max-pool-size: 15
+        min-idle: 5
+        connection-test-query: select 1
+        pool-name: ApprovalHikariCP
+      primary: base
+      datasource:
+        base:
+          username: root
+          password: qwedsa!@#
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          url: jdbc:mysql://172.16.0.10:3306/wxwork?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT%2b8
+      p6spy: true
+
+mybatis-plus:
+  type-aliases-package: com.ezhiyang.approval.entity
+  mapper-locations: classpath:mapper/**/.xml
+  configuration:
+    jdbc-type-for-null: null
+  global-config:
+    banner: false
+
+# 企业微信配置
+qywx:
+  corpid: wwc5057e76805fa8ac
+  # 审批应用配置
+  approval:
+    token: taT2xL4gMuv3eWFTRr
+    encodingAESKey: UoqFEy9YAOa15NxO7yGbPj6v4ODLvxpdPaK8E8LTBuO
+    secret: LSyEMX6zvBMbHavKEdYdkBWg-qNQec6wE_2zkxu_knM
+  # 通讯录配置
+  contact:
+    token: M1RLARS2GU2SIBMpDpHjcLAqIpYG
+    encodingAESKey: geBPODBuj8efqpgkw3VcYYntja8b45JtMkNfQs7Hxjs
+    secret: E7LtKs9reVetlMyk1yYOrXvYQaKM4vLV0eEtX5FoZvo
