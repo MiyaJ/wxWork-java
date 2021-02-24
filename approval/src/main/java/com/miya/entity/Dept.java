@@ -4,6 +4,8 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import java.io.Serializable;
+
+import com.miya.model.contact.WxDept;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -60,5 +62,13 @@ public class Dept implements Serializable {
      */
     private Long qywxParentId;
 
-
+    public Dept(WxDept wxDept) {
+        this.name = wxDept.getName();
+        this.nameEn = wxDept.getNameEn();
+        this.isDeleted = Boolean.FALSE;
+        this.order = wxDept.getOrder();
+        this.parentId = null;
+        this.qywxId = wxDept.getId();
+        this.qywxParentId = wxDept.getParentId();
+    }
 }

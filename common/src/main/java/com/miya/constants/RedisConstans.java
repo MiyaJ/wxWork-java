@@ -40,4 +40,9 @@ public class RedisConstans {
      * 审批失败次数
      */
     public static final String APPROVAL_CONSUMER_FAIL_COUNT_PREFIX = "approval:consumer:fail:count:";
+
+    /**
+     * 通讯录应用接口token
+     */
+    public static final String QYWX_ACCESS_TOKEN_KEY_CONTACT = "qywx:access_token:contact";
 }
