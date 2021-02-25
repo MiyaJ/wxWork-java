@@ -41,5 +41,5 @@ public class WxDept implements Serializable {
     /**
      * 在父部门中的次序值, order值大的排序靠前
      */
-    private Integer order;
+    private Long order;
 }

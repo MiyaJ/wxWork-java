@@ -2,6 +2,7 @@ package com.miya.controller;
 
 import com.miya.handler.NoticeHandler;
 import com.miya.service.IApprovalTaskService;
+import com.miya.service.IContactService;
 import com.miya.service.IMessageService;
 import com.miya.model.CommonResult;
 import lombok.extern.slf4j.Slf4j;
@@ -61,5 +62,20 @@ public class TestController {
     @GetMapping("/sendMsg")
     public CommonResult sendMsg(String to, String content) {
         return messageService.test(to, content);
+    }
+
+    @Autowired
+    private IContactService contactService;
+
+    @GetMapping("/initDept")
+    public CommonResult initDept() {
+        contactService.initDeptAndEmp(null);
+        return CommonResult.success();
+    }
+
+    @GetMapping("/repairDeptAndEmp")
+    public CommonResult repairDeptAndEmp() {
+        contactService.repairDeptAndEmp(null);
+        return CommonResult.success();
     }
 }

@@ -6,8 +6,10 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import java.io.Serializable;
 
 import com.miya.model.contact.WxDept;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 /**
  * <p>
@@ -20,9 +22,13 @@ import lombok.EqualsAndHashCode;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @TableName("t_dept")
+@NoArgsConstructor
+@AllArgsConstructor
 public class Dept implements Serializable {
 
     private static final long serialVersionUID = 1L;
+
+    public static Long TOP = 0L;
 
     @TableId(value = "id", type = IdType.AUTO)
     private Long id;
@@ -45,7 +51,7 @@ public class Dept implements Serializable {
     /**
      * 在父部门中的次序值
      */
-    private Integer order;
+    private Long sort;
 
     /**
      * 删除标识: 0-未删除; 1-已删除
@@ -66,7 +72,7 @@ public class Dept implements Serializable {
         this.name = wxDept.getName();
         this.nameEn = wxDept.getNameEn();
         this.isDeleted = Boolean.FALSE;
-        this.order = wxDept.getOrder();
+        this.sort = wxDept.getOrder();
         this.parentId = null;
         this.qywxId = wxDept.getId();
         this.qywxParentId = wxDept.getParentId();

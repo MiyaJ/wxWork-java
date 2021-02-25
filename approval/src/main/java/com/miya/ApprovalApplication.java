@@ -32,8 +32,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @Slf4j
 public class ApprovalApplication implements CommandLineRunner {
 
-    @Autowired
-    private CompensateHandler compensateHandler;
+//    @Autowired
+//    private CompensateHandler compensateHandler;
 
     public static void main(String[] args) {
         SpringApplication.run(ApprovalApplication.class, args);
@@ -56,6 +56,6 @@ public class ApprovalApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         log.info("compensateApprovalRestart --->run--->");
-        compensateHandler.compensateApprovalRestart();
+//        compensateHandler.compensateApprovalRestart();
     }
 }

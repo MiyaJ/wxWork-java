@@ -12,8 +12,8 @@ spring:
   rabbitmq:
     host: 127.0.0.1
     port: 5672
-    username: guest
-    password: guest
+    username: admin
+    password: admin
     listener:
       simple:
         retry:                    #抛异常会按retry策略重发（建议不在程序内抛异常，记录失败消息，然后确认）

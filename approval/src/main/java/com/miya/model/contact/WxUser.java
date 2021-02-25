@@ -35,12 +35,12 @@ public class WxUser implements Serializable {
     /**
      * 成员所属部门id列表
      */
-    private List<Integer> department;
+    private List<Long> department;
 
     /**
      * 部门内的排序值，默认为0
      */
-    private List<Integer> order;
+    private List<Long> order;
 
     /**
      * 性别。0表示未定义，1表示男性，2表示女性

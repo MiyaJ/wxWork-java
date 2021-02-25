@@ -1,5 +1,6 @@
 package com.miya.entity;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -7,8 +8,10 @@ import java.io.Serializable;
 import java.util.List;
 
 import com.miya.model.contact.WxUser;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Transient;
 
 /**
@@ -22,6 +25,8 @@ import org.springframework.data.annotation.Transient;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @TableName("t_emp")
+@NoArgsConstructor
+@AllArgsConstructor
 public class Emp implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -64,11 +69,13 @@ public class Emp implements Serializable {
      */
     private Boolean isDeleted;
 
-    @Transient
-    private List<Integer> department;
-    @Transient
-    private List<Integer> order;
-    @Transient
+    @TableField(exist = false)
+    private List<Long> department;
+    @TableField(exist = false)
+    private List<Integer> isLeaderInDept;
+    @TableField(exist = false)
+    private List<Long> sort;
+    @TableField(exist = false)
     private Long mainDepartment;
 
     public Emp(WxUser wxUser) {
@@ -80,7 +87,8 @@ public class Emp implements Serializable {
         this.name = wxUser.getName();
         this.qywxUserId = wxUser.getUserId();
         this.department = wxUser.getDepartment();
-        this.order = wxUser.getOrder();
+        this.isLeaderInDept = wxUser.getIsLeaderInDept();
+        this.sort = wxUser.getOrder();
         this.mainDepartment = wxUser.getMainDepartment();
     }
 }

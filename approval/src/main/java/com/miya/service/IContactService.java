@@ -74,4 +74,14 @@ public interface IContactService {
      * @updateTime 2021/2/24 15:46
      */
     void initDeptAndEmp(Long deptId);
+
+    /**
+     * 修复部门与员工
+     *
+     * @param deptId 部门id, 不传或null 为初始化全部
+     * @return
+     * @author Caixiaowei
+     * @updateTime 2021/2/25 15:19
+     */
+    void repairDeptAndEmp(Long deptId);
 }
